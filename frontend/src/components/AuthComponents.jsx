@@ -15,7 +15,7 @@ const AuthPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+    const endpoint = isLogin ? 'http://localhost:3001/register' : 'http://localhost:3001/login';
     
     try {
       const response = await fetch(endpoint, {

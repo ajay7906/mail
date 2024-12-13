@@ -39,7 +39,7 @@ const authenticateToken = (req, res, next) => {
 };
 
 // Auth Routes
-app.post('/api/auth/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   const { email, password, name } = req.body;
   
   if (users.find(user => user.email === email)) {
@@ -53,7 +53,7 @@ app.post('/api/auth/register', async (req, res) => {
   res.json({ token });
 });
 
-app.post('/api/auth/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
 
